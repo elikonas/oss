@@ -1,0 +1,26 @@
+{
+  "name": "kanban-flow",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "kanban-flow/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/kanban-flow",
+        "main": "kanban-flow/src/index.ts",
+        "tsConfig": "kanban-flow/tsconfig.lib.json",
+        "assets": ["kanban-flow/*.md"]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../coverage/kanban-flow"
+      }
+    }
+  }
+}
